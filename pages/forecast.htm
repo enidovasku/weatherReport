@@ -1,0 +1,23 @@
+<p>
+    <a href="#">Back to Search</a>
+</p>
+
+Forecast for {{city}}
+<hr />
+Every 3-Hours: <a href="#/forecast/5" ng-class="{'bg-primary':  days === '5'}">5</a> | <a href="#/forecast/10" ng-class= "{'bg-primary': days === '10'}">10</a> | <a href="#/forecast/15"    ng-class="{'bg-primary': days === '15'}">15</a>
+<br />
+<div ng-repeat="w in weatherResult.list">
+    <div class="row">
+        <div class="col-md-12"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ convertToDate(w.dt)| date:"d MMM , y on HH:mm" }}</h3>
+                </div>
+                <div class="panel-body">
+                Temperature: {{convertToCelsius(w.main.temp)}} &deg;C
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
